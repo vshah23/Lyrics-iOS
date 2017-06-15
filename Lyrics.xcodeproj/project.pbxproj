@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D30D89D1EE3998800C221A3 /* Lyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30D89C1EE3998800C221A3 /* Lyrics.swift */; };
 		1D730DC21EE126C900AA232A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D730DC11EE126C900AA232A /* AppDelegate.swift */; };
 		1D730DC41EE126C900AA232A /* LYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D730DC31EE126C900AA232A /* LYViewController.swift */; };
 		1D730DC71EE126C900AA232A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D730DC51EE126C900AA232A /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D30D89C1EE3998800C221A3 /* Lyrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lyrics.swift; sourceTree = "<group>"; };
 		1D730DBE1EE126C900AA232A /* Lyrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D730DC11EE126C900AA232A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D730DC31EE126C900AA232A /* LYViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D30D89E1EE3B00B00C221A3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1D730DC11EE126C900AA232A /* AppDelegate.swift */,
+				1D730DC81EE126C900AA232A /* Assets.xcassets */,
+				1D730DCA1EE126C900AA232A /* LaunchScreen.storyboard */,
+				1D730DC51EE126C900AA232A /* Main.storyboard */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
 		1D730DB51EE126C900AA232A = {
 			isa = PBXGroup;
 			children = (
@@ -97,10 +110,7 @@
 		1D730DC01EE126C900AA232A /* Lyrics */ = {
 			isa = PBXGroup;
 			children = (
-				1D730DC11EE126C900AA232A /* AppDelegate.swift */,
-				1D730DC81EE126C900AA232A /* Assets.xcassets */,
-				1D730DCA1EE126C900AA232A /* LaunchScreen.storyboard */,
-				1D730DC51EE126C900AA232A /* Main.storyboard */,
+				1D30D89E1EE3B00B00C221A3 /* Application */,
 				1D730DEF1EE1278100AA232A /* Model */,
 				1D730DF01EE1278B00AA232A /* View */,
 				1D730DF11EE1279100AA232A /* ViewController */,
@@ -130,6 +140,7 @@
 		1D730DEF1EE1278100AA232A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D30D89C1EE3998800C221A3 /* Lyrics.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -295,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D30D89D1EE3998800C221A3 /* Lyrics.swift in Sources */,
 				1D730DC41EE126C900AA232A /* LYViewController.swift in Sources */,
 				1D730DC21EE126C900AA232A /* AppDelegate.swift in Sources */,
 			);
