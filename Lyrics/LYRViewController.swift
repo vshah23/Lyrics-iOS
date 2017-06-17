@@ -1,5 +1,5 @@
 //
-//  LYViewController.swift
+//  LYRViewController.swift
 //  Lyrics
 //
 //  Created by Vikas Shah on 6/1/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LYViewController: UIViewController {
+class LYRViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
