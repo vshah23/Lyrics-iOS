@@ -9,9 +9,9 @@
 import Foundation
 
 class LYRDataAdapter: LYRDataAdapterProtocol {
-    private(set) public var apiClient: ApiClientProtocol
+    private(set) public var apiClient: VSApiClientProtocol
     
-    public init(apiClient: ApiClientProtocol) {
+    public init(apiClient: VSApiClientProtocol) {
         self.apiClient = apiClient
     }
 }

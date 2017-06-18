@@ -13,8 +13,8 @@ private enum HTTPMethod: String {
     case POST
 }
 
-class ApiClient {
-    private func performRequest(request: URLRequest, _ completion: @escaping (ApiResponseStatus) -> Void) {
+class VSApiClient {
+    private func performRequest(request: URLRequest, _ completion: @escaping (VSApiResponseStatus) -> Void) {
         let session = URLSession(configuration: .default)
         
         session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
@@ -29,8 +29,8 @@ class ApiClient {
     }
 }
 
-extension ApiClient: ApiClientProtocol {
-    func get(_ url: String, queryParams: String..., completion: @escaping (ApiResponseStatus) -> Void) {
+extension VSApiClient: VSApiClientProtocol {
+    func get(_ url: String, queryParams: String..., completion: @escaping (VSApiResponseStatus) -> Void) {
         let fullURL = url + "?=" + queryParams.joined(separator: "&")
         guard let url = URL(string: fullURL) else {
             completion(.Failure(nil))
@@ -42,7 +42,7 @@ extension ApiClient: ApiClientProtocol {
         performRequest(request: request, completion)
     }
     
-    func post(_ url: String, _ completion: @escaping (ApiResponseStatus) -> Void) {
+    func post(_ url: String, _ completion: @escaping (VSApiResponseStatus) -> Void) {
         guard let url = URL(string: url) else {
             completion(.Failure(nil))
             return

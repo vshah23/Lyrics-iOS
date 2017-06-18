@@ -15,6 +15,9 @@ class LYRGoogleMusicDataAdapter: LYRDataAdapter {
                      artistName: String,
                      albumTitle: String?,
                      _ completion: (LYRDataAdapterResponseStatus) -> Void) {
-//        apiClient.get(<#T##url: String##String#>, queryParams: <#T##String...##String#>, completion: <#T##(ApiResponseStatus) -> Void#>)
+//        apiClient.get(googleMusicURL,
+//                      queryParams: <#T##String...##String#>) { (<#ApiResponseStatus#>) in
+//                        <#code#>
+//        }
     }
 }

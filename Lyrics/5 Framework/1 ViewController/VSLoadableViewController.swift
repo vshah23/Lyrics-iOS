@@ -1,5 +1,5 @@
 //
-//  LYRViewController.swift
+//  VSLoadableViewController.swift
 //  Lyrics
 //
 //  Created by Vikas Shah on 6/1/17.
@@ -8,8 +8,19 @@
 
 import UIKit
 
-class LYRViewController: UIViewController {
-
+class VSLoadableViewController: UIViewController {
+    public var dataSource: VSLoadableDatasourceProtocol
+    
+    init(dataSource: VSLoadableDatasourceProtocol) {
+        self.dataSource = dataSource
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        dataSource = VSLoadableDatasource()
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,5 +35,9 @@ class LYRViewController: UIViewController {
         super.viewWillAppear(animated)
         
         //kick off data fetch
+    }
+    
+    func reloadData() {
+        
     }
 }
