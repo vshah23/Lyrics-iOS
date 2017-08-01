@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D05F4021F3018B7002AD6A9 /* LYRLoadableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05F4011F3018B7002AD6A9 /* LYRLoadableDatasource.swift */; };
+		1D05F4051F30275D002AD6A9 /* VSLoadableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05F4041F30275D002AD6A9 /* VSLoadableProtocol.swift */; };
+		1D05F4081F302A7D002AD6A9 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05F4071F302A7D002AD6A9 /* UIView+Constraints.swift */; };
 		1D1941781EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1941771EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift */; };
 		1D19417B1EF4D92400B4F1B6 /* VSApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19417A1EF4D92400B4F1B6 /* VSApiClientProtocol.swift */; };
 		1D19417D1EF4DE7700B4F1B6 /* LYRDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19417C1EF4DE7700B4F1B6 /* LYRDataAdapter.swift */; };
 		1D246A7A1EF614C0007F4865 /* LYRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D246A791EF614C0007F4865 /* LYRMainViewController.swift */; };
 		1D246A7C1EF61EE8007F4865 /* VSLoadableDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D246A7B1EF61EE8007F4865 /* VSLoadableDatasourceProtocol.swift */; };
-		1D246A7E1EF631E4007F4865 /* VSLoadableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D246A7D1EF631E3007F4865 /* VSLoadableDatasource.swift */; };
 		1D30D89D1EE3998800C221A3 /* Lyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30D89C1EE3998800C221A3 /* Lyrics.swift */; };
 		1D31D5041EF4E51B00911459 /* VSApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D31D5031EF4E51B00911459 /* VSApiClient.swift */; };
 		1D56EFDA1EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D56EFD91EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift */; };
@@ -43,12 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D05F4011F3018B7002AD6A9 /* LYRLoadableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRLoadableDatasource.swift; sourceTree = "<group>"; };
+		1D05F4031F3026F6002AD6A9 /* VSLoadableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSLoadableDatasource.swift; sourceTree = "<group>"; };
+		1D05F4041F30275D002AD6A9 /* VSLoadableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSLoadableProtocol.swift; sourceTree = "<group>"; };
+		1D05F4071F302A7D002AD6A9 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		1D1941771EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRDataAdapterProtocol.swift; sourceTree = "<group>"; };
 		1D19417A1EF4D92400B4F1B6 /* VSApiClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSApiClientProtocol.swift; sourceTree = "<group>"; };
 		1D19417C1EF4DE7700B4F1B6 /* LYRDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRDataAdapter.swift; sourceTree = "<group>"; };
 		1D246A791EF614C0007F4865 /* LYRMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRMainViewController.swift; sourceTree = "<group>"; };
 		1D246A7B1EF61EE8007F4865 /* VSLoadableDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSLoadableDatasourceProtocol.swift; sourceTree = "<group>"; };
-		1D246A7D1EF631E3007F4865 /* VSLoadableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSLoadableDatasource.swift; sourceTree = "<group>"; };
 		1D30D89C1EE3998800C221A3 /* Lyrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lyrics.swift; sourceTree = "<group>"; };
 		1D31D5031EF4E51B00911459 /* VSApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSApiClient.swift; sourceTree = "<group>"; };
 		1D56EFD91EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRGoogleMusicDataAdapter.swift; sourceTree = "<group>"; };
@@ -92,28 +97,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D05F3FF1F301823002AD6A9 /* 4 Datasources */ = {
+			isa = PBXGroup;
+			children = (
+				1D05F4011F3018B7002AD6A9 /* LYRLoadableDatasource.swift */,
+			);
+			name = "4 Datasources";
+			sourceTree = "<group>";
+		};
+		1D05F4001F30186C002AD6A9 /* 6 Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1D730DCA1EE126C900AA232A /* LaunchScreen.storyboard */,
+				1D730DC51EE126C900AA232A /* Main.storyboard */,
+			);
+			name = "6 Storyboards";
+			sourceTree = "<group>";
+		};
+		1D05F4061F302A6F002AD6A9 /* 4 Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1D05F4071F302A7D002AD6A9 /* UIView+Constraints.swift */,
+			);
+			path = "4 Helpers";
+			sourceTree = "<group>";
+		};
 		1D1941791EF4D8CE00B4F1B6 /* 2 Networking */ = {
 			isa = PBXGroup;
 			children = (
-				1D19417A1EF4D92400B4F1B6 /* VSApiClientProtocol.swift */,
 				1D31D5031EF4E51B00911459 /* VSApiClient.swift */,
+				1D19417A1EF4D92400B4F1B6 /* VSApiClientProtocol.swift */,
 			);
 			path = "2 Networking";
 			sourceTree = "<group>";
 		};
-		1D246A751EF6126E007F4865 /* 5 Framework */ = {
+		1D246A751EF6126E007F4865 /* 1 Framework */ = {
 			isa = PBXGroup;
 			children = (
 				1D246A771EF612C6007F4865 /* 1 ViewController */,
 				1D1941791EF4D8CE00B4F1B6 /* 2 Networking */,
 				1D246A781EF61491007F4865 /* 3 Datasource */,
+				1D05F4061F302A6F002AD6A9 /* 4 Helpers */,
 			);
-			path = "5 Framework";
+			path = "1 Framework";
 			sourceTree = "<group>";
 		};
 		1D246A771EF612C6007F4865 /* 1 ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1D05F4041F30275D002AD6A9 /* VSLoadableProtocol.swift */,
 				1D730DC31EE126C900AA232A /* VSLoadableViewController.swift */,
 			);
 			path = "1 ViewController";
@@ -122,8 +154,8 @@
 		1D246A781EF61491007F4865 /* 3 Datasource */ = {
 			isa = PBXGroup;
 			children = (
+				1D05F4031F3026F6002AD6A9 /* VSLoadableDatasource.swift */,
 				1D246A7B1EF61EE8007F4865 /* VSLoadableDatasourceProtocol.swift */,
-				1D246A7D1EF631E3007F4865 /* VSLoadableDatasource.swift */,
 			);
 			path = "3 Datasource";
 			sourceTree = "<group>";
@@ -133,8 +165,13 @@
 			children = (
 				1D730DC11EE126C900AA232A /* LYRAppDelegate.swift */,
 				1D730DC81EE126C900AA232A /* Assets.xcassets */,
-				1D730DCA1EE126C900AA232A /* LaunchScreen.storyboard */,
-				1D730DC51EE126C900AA232A /* Main.storyboard */,
+				1D730DEF1EE1278100AA232A /* 1 Model */,
+				1D730DF01EE1278B00AA232A /* 2 View */,
+				1D730DF11EE1279100AA232A /* 3 ViewController */,
+				1D05F3FF1F301823002AD6A9 /* 4 Datasources */,
+				1DEEDFD81EF4C7DC00355D3F /* 5 Data Adapters */,
+				1D05F4001F30186C002AD6A9 /* 6 Storyboards */,
+				1D730DF21EE127A200AA232A /* 7 Supporting Files */,
 			);
 			name = "0 Application";
 			sourceTree = "<group>";
@@ -163,12 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				1D30D89E1EE3B00B00C221A3 /* 0 Application */,
-				1D730DEF1EE1278100AA232A /* 1 Model */,
-				1D730DF01EE1278B00AA232A /* 2 View */,
-				1D730DF11EE1279100AA232A /* 3 ViewController */,
-				1DEEDFD81EF4C7DC00355D3F /* 4 Data Adapters */,
-				1D246A751EF6126E007F4865 /* 5 Framework */,
-				1D730DF21EE127A200AA232A /* 6 Supporting Files */,
+				1D246A751EF6126E007F4865 /* 1 Framework */,
 			);
 			path = Lyrics;
 			sourceTree = "<group>";
@@ -214,22 +246,22 @@
 			name = "3 ViewController";
 			sourceTree = "<group>";
 		};
-		1D730DF21EE127A200AA232A /* 6 Supporting Files */ = {
+		1D730DF21EE127A200AA232A /* 7 Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				1D730DCD1EE126C900AA232A /* Info.plist */,
 			);
-			name = "6 Supporting Files";
+			name = "7 Supporting Files";
 			sourceTree = "<group>";
 		};
-		1DEEDFD81EF4C7DC00355D3F /* 4 Data Adapters */ = {
+		1DEEDFD81EF4C7DC00355D3F /* 5 Data Adapters */ = {
 			isa = PBXGroup;
 			children = (
 				1D1941771EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift */,
 				1D19417C1EF4DE7700B4F1B6 /* LYRDataAdapter.swift */,
 				1D56EFD91EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift */,
 			);
-			name = "4 Data Adapters";
+			name = "5 Data Adapters";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,10 +411,12 @@
 				1D730DC21EE126C900AA232A /* LYRAppDelegate.swift in Sources */,
 				1D56EFDA1EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift in Sources */,
 				1D246A7C1EF61EE8007F4865 /* VSLoadableDatasourceProtocol.swift in Sources */,
+				1D05F4081F302A7D002AD6A9 /* UIView+Constraints.swift in Sources */,
 				1D19417B1EF4D92400B4F1B6 /* VSApiClientProtocol.swift in Sources */,
 				1D246A7A1EF614C0007F4865 /* LYRMainViewController.swift in Sources */,
 				1D1941781EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift in Sources */,
-				1D246A7E1EF631E4007F4865 /* VSLoadableDatasource.swift in Sources */,
+				1D05F4021F3018B7002AD6A9 /* LYRLoadableDatasource.swift in Sources */,
+				1D05F4051F30275D002AD6A9 /* VSLoadableProtocol.swift in Sources */,
 				1D19417D1EF4DE7700B4F1B6 /* LYRDataAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,5 +9,7 @@
 import Foundation
 
 class VSLoadableDatasource: VSLoadableDatasourceProtocol {
-    
+    func loadContent() {
+        <#code#>
+    }
 }

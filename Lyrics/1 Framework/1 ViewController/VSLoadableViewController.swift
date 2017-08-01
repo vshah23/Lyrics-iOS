@@ -9,7 +9,7 @@
 import UIKit
 
 class VSLoadableViewController: UIViewController {
-    public var dataSource: VSLoadableDatasourceProtocol
+    public var dataSource: VSLoadableDatasourceProtocol?
     
     init(dataSource: VSLoadableDatasourceProtocol) {
         self.dataSource = dataSource
@@ -17,7 +17,6 @@ class VSLoadableViewController: UIViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        dataSource = VSLoadableDatasource()
         super.init(coder: aDecoder)
     }
     
@@ -35,9 +34,21 @@ class VSLoadableViewController: UIViewController {
         super.viewWillAppear(animated)
         
         //kick off data fetch
+        dataSource?.loadContent()
     }
-    
-    func reloadData() {
+}
+
+extension VSLoadableViewController: VSLoadableProtocol {
+    func replaceView(with newView: UIView) {
+        guard let superview = self.view else {
+            assertionFailure("VSLoadableViewController: ViewController's view was nil")
+            return
+        }
         
+        superview.subviews.forEach { subview in
+            subview.removeFromSuperview()
+        }
+        superview.addSubview(newView)
+        newView.pinToSuperView()
     }
 }

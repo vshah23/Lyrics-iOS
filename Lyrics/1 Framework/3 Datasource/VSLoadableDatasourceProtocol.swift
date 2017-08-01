@@ -9,5 +9,11 @@
 import Foundation
 
 protocol VSLoadableDatasourceProtocol {
-    
+    func loadContent()
+}
+
+extension VSLoadableDatasourceProtocol {
+    func loadContent() {
+        
+    }
 }
