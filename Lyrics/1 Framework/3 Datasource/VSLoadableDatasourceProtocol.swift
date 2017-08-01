@@ -6,14 +6,10 @@
 //  Copyright © 2017 Vikas Shah. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol VSLoadableDatasourceProtocol {
+public protocol VSLoadableDatasourceProtocol {
+    init(with adapter: VSDataAdapterProtocol, for loadable: VSLoadableProtocol)
     func loadContent()
-}
-
-extension VSLoadableDatasourceProtocol {
-    func loadContent() {
-        
-    }
+    func view(for data: Any) -> UIView
 }

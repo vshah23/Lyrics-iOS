@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol VSLoadableProtocol {
+public protocol VSLoadableProtocol {
     func replaceView(with view: UIView)
 }

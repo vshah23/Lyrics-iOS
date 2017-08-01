@@ -14,6 +14,7 @@ internal extension UIView {
             assertionFailure("UIView Extension: No superview to pin to")
             return
         }
+        
         self.topAnchor.constraint(equalTo: superview.topAnchor)
         self.leftAnchor.constraint(equalTo: superview.leftAnchor)
         self.bottomAnchor.constraint(equalTo: superview.bottomAnchor)

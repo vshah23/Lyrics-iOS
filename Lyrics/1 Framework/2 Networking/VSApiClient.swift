@@ -13,7 +13,7 @@ private enum HTTPMethod: String {
     case POST
 }
 
-class VSApiClient {
+public class VSApiClient {
     private func performRequest(request: URLRequest, _ completion: @escaping (VSApiResponseStatus) -> Void) {
         let session = URLSession(configuration: .default)
         
@@ -30,7 +30,7 @@ class VSApiClient {
 }
 
 extension VSApiClient: VSApiClientProtocol {
-    func get(_ url: String, queryParams: String..., completion: @escaping (VSApiResponseStatus) -> Void) {
+    public func get(_ url: String, queryParams: String..., completion: @escaping (VSApiResponseStatus) -> Void) {
         let fullURL = url + "?=" + queryParams.joined(separator: "&")
         guard let url = URL(string: fullURL) else {
             completion(.Failure(nil))
@@ -42,7 +42,7 @@ extension VSApiClient: VSApiClientProtocol {
         performRequest(request: request, completion)
     }
     
-    func post(_ url: String, _ completion: @escaping (VSApiResponseStatus) -> Void) {
+    public func post(_ url: String, _ completion: @escaping (VSApiResponseStatus) -> Void) {
         guard let url = URL(string: url) else {
             completion(.Failure(nil))
             return

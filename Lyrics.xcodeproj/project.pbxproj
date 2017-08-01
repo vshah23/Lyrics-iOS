@@ -10,6 +10,9 @@
 		1D05F4021F3018B7002AD6A9 /* LYRLoadableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05F4011F3018B7002AD6A9 /* LYRLoadableDatasource.swift */; };
 		1D05F4051F30275D002AD6A9 /* VSLoadableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05F4041F30275D002AD6A9 /* VSLoadableProtocol.swift */; };
 		1D05F4081F302A7D002AD6A9 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05F4071F302A7D002AD6A9 /* UIView+Constraints.swift */; };
+		1D05F40B1F303C70002AD6A9 /* VSDataAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05F40A1F303C70002AD6A9 /* VSDataAdapterProtocol.swift */; };
+		1D05F40D1F303D3D002AD6A9 /* VSDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05F40C1F303D3D002AD6A9 /* VSDataAdapter.swift */; };
+		1D05F40E1F303E34002AD6A9 /* VSLoadableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D05F4031F3026F6002AD6A9 /* VSLoadableDatasource.swift */; };
 		1D1941781EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1941771EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift */; };
 		1D19417B1EF4D92400B4F1B6 /* VSApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19417A1EF4D92400B4F1B6 /* VSApiClientProtocol.swift */; };
 		1D19417D1EF4DE7700B4F1B6 /* LYRDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19417C1EF4DE7700B4F1B6 /* LYRDataAdapter.swift */; };
@@ -49,6 +52,8 @@
 		1D05F4031F3026F6002AD6A9 /* VSLoadableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSLoadableDatasource.swift; sourceTree = "<group>"; };
 		1D05F4041F30275D002AD6A9 /* VSLoadableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSLoadableProtocol.swift; sourceTree = "<group>"; };
 		1D05F4071F302A7D002AD6A9 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		1D05F40A1F303C70002AD6A9 /* VSDataAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSDataAdapterProtocol.swift; sourceTree = "<group>"; };
+		1D05F40C1F303D3D002AD6A9 /* VSDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSDataAdapter.swift; sourceTree = "<group>"; };
 		1D1941771EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRDataAdapterProtocol.swift; sourceTree = "<group>"; };
 		1D19417A1EF4D92400B4F1B6 /* VSApiClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSApiClientProtocol.swift; sourceTree = "<group>"; };
 		1D19417C1EF4DE7700B4F1B6 /* LYRDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRDataAdapter.swift; sourceTree = "<group>"; };
@@ -114,12 +119,21 @@
 			name = "6 Storyboards";
 			sourceTree = "<group>";
 		};
-		1D05F4061F302A6F002AD6A9 /* 4 Helpers */ = {
+		1D05F4061F302A6F002AD6A9 /* 5 Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				1D05F4071F302A7D002AD6A9 /* UIView+Constraints.swift */,
 			);
-			path = "4 Helpers";
+			path = "5 Helpers";
+			sourceTree = "<group>";
+		};
+		1D05F4091F303C23002AD6A9 /* 4 Data Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				1D05F40C1F303D3D002AD6A9 /* VSDataAdapter.swift */,
+				1D05F40A1F303C70002AD6A9 /* VSDataAdapterProtocol.swift */,
+			);
+			path = "4 Data Adapter";
 			sourceTree = "<group>";
 		};
 		1D1941791EF4D8CE00B4F1B6 /* 2 Networking */ = {
@@ -137,7 +151,8 @@
 				1D246A771EF612C6007F4865 /* 1 ViewController */,
 				1D1941791EF4D8CE00B4F1B6 /* 2 Networking */,
 				1D246A781EF61491007F4865 /* 3 Datasource */,
-				1D05F4061F302A6F002AD6A9 /* 4 Helpers */,
+				1D05F4091F303C23002AD6A9 /* 4 Data Adapter */,
+				1D05F4061F302A6F002AD6A9 /* 5 Helpers */,
 			);
 			path = "1 Framework";
 			sourceTree = "<group>";
@@ -405,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D05F40B1F303C70002AD6A9 /* VSDataAdapterProtocol.swift in Sources */,
 				1D31D5041EF4E51B00911459 /* VSApiClient.swift in Sources */,
 				1D30D89D1EE3998800C221A3 /* Lyrics.swift in Sources */,
 				1D730DC41EE126C900AA232A /* VSLoadableViewController.swift in Sources */,
@@ -413,9 +429,11 @@
 				1D246A7C1EF61EE8007F4865 /* VSLoadableDatasourceProtocol.swift in Sources */,
 				1D05F4081F302A7D002AD6A9 /* UIView+Constraints.swift in Sources */,
 				1D19417B1EF4D92400B4F1B6 /* VSApiClientProtocol.swift in Sources */,
+				1D05F40D1F303D3D002AD6A9 /* VSDataAdapter.swift in Sources */,
 				1D246A7A1EF614C0007F4865 /* LYRMainViewController.swift in Sources */,
 				1D1941781EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift in Sources */,
 				1D05F4021F3018B7002AD6A9 /* LYRLoadableDatasource.swift in Sources */,
+				1D05F40E1F303E34002AD6A9 /* VSLoadableDatasource.swift in Sources */,
 				1D05F4051F30275D002AD6A9 /* VSLoadableProtocol.swift in Sources */,
 				1D19417D1EF4DE7700B4F1B6 /* LYRDataAdapter.swift in Sources */,
 			);
