@@ -10,7 +10,16 @@ import UIKit
 
 public class VSLoadableDatasource: VSLoadableDatasourceProtocol {
     private let adapter: VSDataAdapterProtocol
-    private let loadable: VSLoadableProtocol
+    private weak var loadable: VSLoadableProtocol? {
+        didSet {
+            guard loadable == nil else { return }
+            
+            //TODO: stop any current data adapter operations
+            
+            
+        }
+    }
+    private var loadingContent: Bool = false
     
     public required init(with adapter: VSDataAdapterProtocol, for loadable: VSLoadableProtocol) {
         self.adapter = adapter
@@ -23,6 +32,19 @@ public class VSLoadableDatasource: VSLoadableDatasourceProtocol {
     }
     
     public func loadContent() {
+        weak var weakSelf = self
+        
+        loadingContent = true
+        adapter.fetchData { data in
+            weakSelf?.contentFinishedLoading(data)
+        }
+    }
+    
+    private func contentFinishedLoading(_ data: Any?) {
+        loadingContent = false
+        
+        
+        
         
     }
     

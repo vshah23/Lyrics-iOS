@@ -14,6 +14,6 @@ public enum VSApiResponseStatus {
 }
 
 public protocol VSApiClientProtocol {
-    func get(_ url: String, queryParams: String..., completion: @escaping (VSApiResponseStatus) -> Void)
+    func get(_ url: String, queryParams: [URLQueryItem]?, completion: @escaping (VSApiResponseStatus) -> Void)
     func post(_ url: String, _ completion: @escaping (VSApiResponseStatus) -> Void)
 }

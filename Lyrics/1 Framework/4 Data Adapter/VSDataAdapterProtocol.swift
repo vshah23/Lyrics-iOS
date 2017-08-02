@@ -10,5 +10,5 @@ import Foundation
 
 public protocol VSDataAdapterProtocol {
     init(with apiClient: VSApiClientProtocol)
-    func fetchData(_ completion: (Any?) -> Void)
+    func fetchData(_ completion: @escaping (Any?) -> Void)
 }

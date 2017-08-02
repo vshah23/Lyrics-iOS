@@ -8,6 +8,8 @@
 
 import Foundation
 
+private let googleURL = "http://www.google.com"
+
 public class VSDataAdapter: VSDataAdapterProtocol {
     private(set) public var apiClient: VSApiClientProtocol
     
@@ -19,7 +21,7 @@ public class VSDataAdapter: VSDataAdapterProtocol {
         self.apiClient = VSApiClient()
     }
     
-    public func fetchData(_ completion: (Any?) -> Void) {
-        completion(nil)
+    public func fetchData(_ completion: @escaping (Any?) -> Void) {
+        apiClient.get(googleURL, queryParams: nil, completion: completion)
     }
 }

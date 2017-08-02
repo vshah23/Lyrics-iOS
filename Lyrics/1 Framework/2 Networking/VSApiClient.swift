@@ -30,12 +30,21 @@ public class VSApiClient {
 }
 
 extension VSApiClient: VSApiClientProtocol {
-    public func get(_ url: String, queryParams: String..., completion: @escaping (VSApiResponseStatus) -> Void) {
-        let fullURL = url + "?=" + queryParams.joined(separator: "&")
-        guard let url = URL(string: fullURL) else {
+    public func get(_ url: String, queryParams: [URLQueryItem]?, completion: @escaping (VSApiResponseStatus) -> Void) {
+        guard var urlComponents = URLComponents(string: url) else {
+            assertionFailure("GET: invalid url")
             completion(.Failure(nil))
             return
         }
+        
+        urlComponents.queryItems = queryParams
+        
+        guard let url = urlComponents.url else {
+            assertionFailure("GET: invalid url")
+            completion(.Failure(nil))
+            return
+        }
+        
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.GET.rawValue
         
@@ -43,16 +52,15 @@ extension VSApiClient: VSApiClientProtocol {
     }
     
     public func post(_ url: String, _ completion: @escaping (VSApiResponseStatus) -> Void) {
-        guard let url = URL(string: url) else {
-            completion(.Failure(nil))
-            return
+        guard let urlComponents = URLComponents(string: url),
+            let url = urlComponents.url else {
+                assertionFailure("POST: invalid url")
+                completion(.Failure(nil))
+                return
         }
-        var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.GET.rawValue
-        completion(.Failure(nil))
-    }
-    
-    func handle(response: URLResponse) {
         
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.POST.rawValue
+        completion(.Failure(nil))
     }
 }

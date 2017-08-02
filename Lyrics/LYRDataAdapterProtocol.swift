@@ -10,10 +10,10 @@ import Foundation
 
 enum LYRDataAdapterResponseStatus {
     case Success(Lyrics)
-    case NoLyricsFound
-    case NothingPlaying
     case NetworkUnavailable
     case SomethingWentWrong
+    case NoLyricsFound
+    case NothingPlaying
 }
 
 protocol LYRDataAdapterProtocol {

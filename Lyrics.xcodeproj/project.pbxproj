@@ -272,8 +272,8 @@
 		1DEEDFD81EF4C7DC00355D3F /* 5 Data Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				1D1941771EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift */,
 				1D19417C1EF4DE7700B4F1B6 /* LYRDataAdapter.swift */,
+				1D1941771EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift */,
 				1D56EFD91EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift */,
 			);
 			name = "5 Data Adapters";
