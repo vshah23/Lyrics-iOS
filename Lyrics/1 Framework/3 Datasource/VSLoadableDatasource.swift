@@ -8,47 +8,70 @@
 
 import UIKit
 
-public class VSLoadableDatasource: VSLoadableDatasourceProtocol {
-    private let adapter: VSDataAdapterProtocol
-    private weak var loadable: VSLoadableProtocol? {
-        didSet {
-            guard loadable == nil else { return }
-            
-            //TODO: stop any current data adapter operations
-            
-            
-        }
-    }
+class VSLoadableDatasource {
+    weak var viewController: VSLoadableViewController?
+    var dataAdapter: VSDataAdapter?
     private var loadingContent: Bool = false
     
-    public required init(with adapter: VSDataAdapterProtocol, for loadable: VSLoadableProtocol) {
-        self.adapter = adapter
-        self.loadable = loadable
+    init(viewController: VSLoadableViewController, dataAdapter: VSDataAdapter?=nil) {
+        self.viewController = viewController
+        self.dataAdapter = dataAdapter ?? VSDataAdapter()
     }
-    
-    public init(loadable: VSLoadableProtocol) {
-        self.adapter = VSDataAdapter()
-        self.loadable = loadable
-    }
-    
-    public func loadContent() {
-        weak var weakSelf = self
-        
+}
+
+extension VSLoadableDatasource {
+    func loadContent() {
+        guard !loadingContent,
+            let dataAdapter = dataAdapter else {
+                return
+        }
         loadingContent = true
-        adapter.fetchData { data in
-            weakSelf?.contentFinishedLoading(data)
+        
+        weak var weakSelf = self
+        dataAdapter.fetchData { status in
+            weakSelf?.contentFinishedLoading(status)
         }
     }
     
-    private func contentFinishedLoading(_ data: Any?) {
+    private func contentFinishedLoading(_ data: VSDataAdapterResponseStatus) {
         loadingContent = false
         
-        
-        
-        
+//        let view = contentView(for: data)
+//        replaceView(with: view)
     }
     
-    public func view(for data: Any) -> UIView {
+    func stopLoadingContent() {
+        //TODO: this
+    }
+}
+
+extension VSLoadableDatasource {
+    func contentView(for status: VSDataAdapterResponseStatus) -> UIView {
+        switch status {
+        case .Loading:
+            return loadingView()
+        case .Success(let response):
+            return successView(for: response)
+        case .NetworkUnavailable:
+            return noConnectionView()
+        case .SomethingWentWrong:
+            return genericFailureView()
+        }
+    }
+    
+    func loadingView() -> UIView {
+        return UIView()
+    }
+    
+    func successView(for data: Any?) -> UIView {
+        return UIView()
+    }
+    
+    func noConnectionView() -> UIView {
+        return UIView()
+    }
+    
+    func genericFailureView() -> UIView {
         return UIView()
     }
 }

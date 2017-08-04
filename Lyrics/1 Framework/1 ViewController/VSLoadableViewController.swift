@@ -8,33 +8,25 @@
 
 import UIKit
 
-public class VSLoadableViewController: UIViewController {
-    public var dataSource: VSLoadableDatasourceProtocol?
+class VSLoadableViewController: UIViewController {
+    public var dataSource: VSLoadableDatasource?
     
-    init(dataSource: VSLoadableDatasourceProtocol) {
+    init(dataSource: VSLoadableDatasource) {
         super.init(nibName: nil, bundle: nil)
         self.dataSource = dataSource
     }
     
-    public required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        self.dataSource = VSLoadableDatasource(loadable: self)
+        self.dataSource = VSLoadableDatasource(viewController: self)
     }
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+}
 
-    public override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+extension VSLoadableViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -43,7 +35,7 @@ public class VSLoadableViewController: UIViewController {
     }
 }
 
-extension VSLoadableViewController: VSLoadableProtocol {
+extension VSLoadableViewController {
     public func replaceView(with newView: UIView) {
         guard let superview = self.view else {
             assertionFailure("VSLoadableViewController: ViewController's view was nil")

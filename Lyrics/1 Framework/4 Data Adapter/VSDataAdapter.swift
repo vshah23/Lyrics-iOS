@@ -8,20 +8,48 @@
 
 import Foundation
 
+enum VSDataAdapterResponseStatus {
+    case Loading
+    case Success(Any?)
+    case NetworkUnavailable
+    case SomethingWentWrong
+}
+
 private let googleURL = "http://www.google.com"
 
-public class VSDataAdapter: VSDataAdapterProtocol {
-    private(set) public var apiClient: VSApiClientProtocol
+class VSDataAdapter {
+    private(set) var apiClient: VSApiClientProtocol
     
-    public required init(with apiClient: VSApiClientProtocol) {
-        self.apiClient = apiClient
-    }
-    
-    public init() {
+    init() {
         self.apiClient = VSApiClient()
     }
     
-    public func fetchData(_ completion: @escaping (Any?) -> Void) {
-        apiClient.get(googleURL, queryParams: nil, completion: completion)
+    required init(with apiClient: VSApiClientProtocol) {
+        self.apiClient = apiClient
+    }
+    
+    func fetchData(_ completion: @escaping (VSDataAdapterResponseStatus) -> Void) {
+        weak var weakSelf = self
+        completion(.Loading)
+        apiClient.get(googleURL, queryParams: nil) { status in
+            switch status {
+            case .Success(let response):
+                completion(.Success(response))
+            case .Failure(let error):
+                weakSelf?.handleFailure(error: error, completion)
+            }
+        }
+    }
+    
+    private func handleFailure(error: Error?, _ completion: @escaping (VSDataAdapterResponseStatus) -> Void) {
+        guard let error = error else {
+            completion(.SomethingWentWrong)
+            return
+        }
+        
+        print(error.localizedDescription)
+        
+        //TODO: check the error to make sure to only do this when true
+        completion(.NetworkUnavailable)
     }
 }

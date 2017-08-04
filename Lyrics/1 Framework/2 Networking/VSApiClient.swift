@@ -5,6 +5,8 @@
 //  Created by Vikas Shah on 6/16/17.
 //  Copyright © 2017 Vikas Shah. All rights reserved.
 //
+//  Simple api client that supports json.
+//
 
 import Foundation
 
@@ -13,7 +15,7 @@ private enum HTTPMethod: String {
     case POST
 }
 
-public class VSApiClient {
+class VSApiClient {
     private func performRequest(request: URLRequest, _ completion: @escaping (VSApiResponseStatus) -> Void) {
         let session = URLSession(configuration: .default)
         
@@ -30,7 +32,7 @@ public class VSApiClient {
 }
 
 extension VSApiClient: VSApiClientProtocol {
-    public func get(_ url: String, queryParams: [URLQueryItem]?, completion: @escaping (VSApiResponseStatus) -> Void) {
+    func get(_ url: String, queryParams: [URLQueryItem]?, completion: @escaping (VSApiResponseStatus) -> Void) {
         guard var urlComponents = URLComponents(string: url) else {
             assertionFailure("GET: invalid url")
             completion(.Failure(nil))
@@ -51,7 +53,8 @@ extension VSApiClient: VSApiClientProtocol {
         performRequest(request: request, completion)
     }
     
-    public func post(_ url: String, _ completion: @escaping (VSApiResponseStatus) -> Void) {
+    //TODO: make POST support a request body -- json?
+    func post(_ url: String, _ completion: @escaping (VSApiResponseStatus) -> Void) {
         guard let urlComponents = URLComponents(string: url),
             let url = urlComponents.url else {
                 assertionFailure("POST: invalid url")
@@ -61,6 +64,7 @@ extension VSApiClient: VSApiClientProtocol {
         
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.POST.rawValue
-        completion(.Failure(nil))
+        
+        performRequest(request: request, completion)
     }
 }
