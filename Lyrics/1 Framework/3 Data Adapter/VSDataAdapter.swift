@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import VSApiClient
 
 enum VSDataAdapterResponseStatus {
     case Loading

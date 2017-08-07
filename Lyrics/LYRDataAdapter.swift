@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import VSApiClient
 
 class LYRDataAdapter: LYRDataAdapterProtocol {
     private(set) public var apiClient: VSApiClientProtocol

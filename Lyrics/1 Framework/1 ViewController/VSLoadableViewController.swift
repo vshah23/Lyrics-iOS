@@ -27,7 +27,7 @@ class VSLoadableViewController: UIViewController {
 }
 
 extension VSLoadableViewController {
-    public override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         //kick off data fetch
@@ -36,7 +36,7 @@ extension VSLoadableViewController {
 }
 
 extension VSLoadableViewController {
-    public func replaceView(with newView: UIView) {
+    func replaceView(with newView: UIView) {
         guard let superview = self.view else {
             assertionFailure("VSLoadableViewController: ViewController's view was nil")
             return

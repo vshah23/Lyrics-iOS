@@ -19,6 +19,8 @@ class VSLoadableDatasource {
     }
 }
 
+//MARK: - Adapter interaction methods
+
 extension VSLoadableDatasource {
     func loadContent() {
         guard !loadingContent,
@@ -29,14 +31,30 @@ extension VSLoadableDatasource {
         
         weak var weakSelf = self
         dataAdapter.fetchData { status in
-            weakSelf?.contentFinishedLoading(status)
+            weakSelf?.adapterStatusUpdated(status)
         }
     }
     
-    private func contentFinishedLoading(_ data: VSDataAdapterResponseStatus) {
+    private func adapterStatusUpdated(_ status: VSDataAdapterResponseStatus) {
+        switch status {
+        case .Loading:
+            contentLoading()
+        case .Success,
+             .NetworkUnavailable,
+             .SomethingWentWrong:
+            contentFinishedLoading(status)
+        }
+    }
+    
+    private func contentLoading() {
+//        let view = contentView(for: .Loading)
+        
+    }
+    
+    private func contentFinishedLoading(_ status: VSDataAdapterResponseStatus) {
         loadingContent = false
         
-//        let view = contentView(for: data)
+//        let view = contentView(for: status)œ
 //        replaceView(with: view)
     }
     
@@ -44,6 +62,8 @@ extension VSLoadableDatasource {
         //TODO: this
     }
 }
+
+//MARK: - View update methods.
 
 extension VSLoadableDatasource {
     func contentView(for status: VSDataAdapterResponseStatus) -> UIView {

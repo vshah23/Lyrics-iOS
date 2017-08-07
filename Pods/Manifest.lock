@@ -1,0 +1,16 @@
+PODS:
+  - VSApiClient (0.1.0)
+
+DEPENDENCIES:
+  - VSApiClient (from `~/VSApiClient`)
+
+EXTERNAL SOURCES:
+  VSApiClient:
+    :path: ~/VSApiClient
+
+SPEC CHECKSUMS:
+  VSApiClient: c21147f153f4ce7de3b1103432404e1336d100ef
+
+PODFILE CHECKSUM: 7483d26f1d7857bea5167b2fdcfadc6043fd1277
+
+COCOAPODS: 1.3.0

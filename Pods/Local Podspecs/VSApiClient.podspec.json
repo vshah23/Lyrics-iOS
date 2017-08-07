@@ -1,0 +1,22 @@
+{
+  "name": "VSApiClient",
+  "platforms": {
+    "ios": "11.0"
+  },
+  "summary": "A simple API client for iOS.",
+  "authors": "Vikas Shah",
+  "social_media_url": "http://twitter.com/vshah23",
+  "homepage": "https://github.com/vshah23/VSApiClient",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "version": "0.1.0",
+  "source": {
+    "git": "https://github.com/vshah23/VSApiClient.git",
+    "tag": "0.1.0"
+  },
+  "frameworks": "Foundation",
+  "source_files": "VSApiClient/**/*.{swift}",
+  "requires_arc": true
+}

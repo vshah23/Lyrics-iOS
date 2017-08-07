@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  LYRLoadableDatasource.swift
 //  Lyrics
 //
 //  Created by Vikas Shah on 7/31/17.
@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+class LYRLoadableDatasource: VSLoadableDatasource {
+    
+}

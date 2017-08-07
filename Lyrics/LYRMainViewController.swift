@@ -8,9 +8,16 @@
 
 import UIKit
 
-class LYRMainViewController: UIViewController {
+class LYRMainViewController: VSLoadableViewController {
+    init(dataSource: LYRLoadableDatasource) {
+        super.init(dataSource: dataSource)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
