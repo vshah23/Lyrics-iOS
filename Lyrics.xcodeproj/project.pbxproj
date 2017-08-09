@@ -81,6 +81,8 @@
 		1DC97FA31F3809D800EAEFC9 /* GenericErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericErrorView.swift; sourceTree = "<group>"; };
 		1DEA52B91F36CB1C00500D18 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		1DEA52BF1F36CBEA00500D18 /* UIView+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoadable.swift"; sourceTree = "<group>"; };
+		1DF36BB01F3A9FD5006AA4D6 /* NoAlbumArtSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoAlbumArtSuccessView.xib; sourceTree = "<group>"; };
+		1DF36BB11F3A9FD5006AA4D6 /* NoAlbumArtSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAlbumArtSuccessView.swift; sourceTree = "<group>"; };
 		24CE5F7B3FED28F2F7B502D9 /* Pods-LyricsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LyricsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LyricsUITests/Pods-LyricsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		262C7AAFD0C1864A163208B6 /* Pods-LyricsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LyricsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LyricsTests/Pods-LyricsTests.release.xcconfig"; sourceTree = "<group>"; };
 		383D3405846E97384272834A /* Pods-Lyrics-LyricsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lyrics-LyricsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lyrics-LyricsUITests/Pods-Lyrics-LyricsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				1D05F4001F30186C002AD6A9 /* 6 Storyboards */,
 				1D730DF21EE127A200AA232A /* 7 Supporting Files */,
 				1D05F4061F302A6F002AD6A9 /* 8 Helper Extensions */,
+				1DF36BB21F3AA160006AA4D6 /* 9 Protocols */,
 			);
 			path = Lyrics;
 			sourceTree = "<group>";
@@ -253,8 +256,8 @@
 		1DEA52BC1F36CB2800500D18 /* 2 Success */ = {
 			isa = PBXGroup;
 			children = (
-				1DC97F991F3804E900EAEFC9 /* SuccessView.xib */,
-				1DC97F9B1F3804F300EAEFC9 /* SuccessView.swift */,
+				1DF36BAE1F3A9FB2006AA4D6 /* Default Success */,
+				1DF36BAF1F3A9FC3006AA4D6 /* No Album Art */,
 			);
 			path = "2 Success";
 			sourceTree = "<group>";
@@ -285,6 +288,31 @@
 				1D56EFD91EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift */,
 			);
 			name = "5 Data Adapters";
+			sourceTree = "<group>";
+		};
+		1DF36BAE1F3A9FB2006AA4D6 /* Default Success */ = {
+			isa = PBXGroup;
+			children = (
+				1DC97F991F3804E900EAEFC9 /* SuccessView.xib */,
+				1DC97F9B1F3804F300EAEFC9 /* SuccessView.swift */,
+			);
+			path = "Default Success";
+			sourceTree = "<group>";
+		};
+		1DF36BAF1F3A9FC3006AA4D6 /* No Album Art */ = {
+			isa = PBXGroup;
+			children = (
+				1DF36BB01F3A9FD5006AA4D6 /* NoAlbumArtSuccessView.xib */,
+				1DF36BB11F3A9FD5006AA4D6 /* NoAlbumArtSuccessView.swift */,
+			);
+			path = "No Album Art";
+			sourceTree = "<group>";
+		};
+		1DF36BB21F3AA160006AA4D6 /* 9 Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "9 Protocols";
 			sourceTree = "<group>";
 		};
 		B99F85658F1380AA4B6E969F /* Pods */ = {

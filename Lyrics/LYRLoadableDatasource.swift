@@ -9,19 +9,19 @@
 import UIKit
 
 class LYRLoadableDatasource {
-    weak var viewController: VSLoadableViewController?
-    var dataAdapter: VSDataAdapter?
+    weak var viewController: LYRMainViewController?
+    var dataAdapter: LYRDataAdapter?
     private var loadingContent: Bool = false
     
-    init(viewController: VSLoadableViewController, dataAdapter: VSDataAdapter?=nil) {
+    init(viewController: LYRMainViewController, dataAdapter: LYRDataAdapter?=nil) {
         self.viewController = viewController
-        self.dataAdapter = dataAdapter ?? VSDataAdapter()
+        self.dataAdapter = dataAdapter ?? LYRDataAdapter()
     }
 }
 
-//MARK: - Adapter interaction methods
+//MARK: - Data adapter interaction methods
 
-extension VSLoadableDatasource {
+extension LYRLoadableDatasource {
     func loadContent() {
         guard !loadingContent,
             let dataAdapter = dataAdapter else {
@@ -35,13 +35,15 @@ extension VSLoadableDatasource {
         }
     }
     
-    private func adapterStatusUpdated(_ status: VSDataAdapterResponseStatus) {
+    private func adapterStatusUpdated(_ status: LYRDataAdapterResponseStatus) {
         switch status {
         case .Loading:
             contentLoading()
         case .Success,
              .NetworkUnavailable,
-             .SomethingWentWrong:
+             .SomethingWentWrong,
+             .NothingPlaying,
+             .NoLyricsFound:
             contentFinishedLoading(status)
         }
     }
@@ -51,7 +53,7 @@ extension VSLoadableDatasource {
         
     }
     
-    private func contentFinishedLoading(_ status: VSDataAdapterResponseStatus) {
+    private func contentFinishedLoading(_ status: LYRDataAdapterResponseStatus) {
         loadingContent = false
         
 //        let view = contentView(for: status)œ
@@ -65,8 +67,8 @@ extension VSLoadableDatasource {
 
 //MARK: - View update methods.
 
-extension VSLoadableDatasource {
-    func contentView(for status: VSDataAdapterResponseStatus) -> UIView {
+extension LYRLoadableDatasource {
+    func contentView(for status: LYRDataAdapterResponseStatus) -> UIView {
         switch status {
         case .Loading:
             return loadingView()
@@ -76,6 +78,10 @@ extension VSLoadableDatasource {
             return noConnectionView()
         case .SomethingWentWrong:
             return genericFailureView()
+        case .NothingPlaying:
+            return nothingPlayingView()
+        case .NoLyricsFound:
+            return noLyricsFoundView()
         }
     }
     
@@ -92,6 +98,14 @@ extension VSLoadableDatasource {
     }
     
     func genericFailureView() -> UIView {
+        return UIView()
+    }
+    
+    func nothingPlayingView() -> UIView {
+        return UIView()
+    }
+    
+    func noLyricsFoundView() -> UIView {
         return UIView()
     }
 }

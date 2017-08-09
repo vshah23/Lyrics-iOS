@@ -12,7 +12,17 @@ import VSApiClient
 class LYRDataAdapter: LYRDataAdapterProtocol {
     private(set) public var apiClient: VSApiClientProtocol
     
-    public init(apiClient: VSApiClientProtocol) {
+    init() {
+        self.apiClient = VSApiClient()
+    }
+    
+    init(apiClient: VSApiClientProtocol) {
         self.apiClient = apiClient
+    }
+}
+
+extension LYRDataAdapter {
+    func fetchData(_ statusUpdate: (LYRDataAdapterResponseStatus) -> Void) {
+        
     }
 }

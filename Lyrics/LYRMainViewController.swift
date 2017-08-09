@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LYRMainViewController {
+class LYRMainViewController: UIViewController {
     public var dataSource: LYRLoadableDatasource?
     
     init(dataSource: LYRLoadableDatasource) {

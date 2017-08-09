@@ -9,6 +9,7 @@
 import Foundation
 
 enum LYRDataAdapterResponseStatus {
+    case Loading
     case Success(Lyrics)
     case NetworkUnavailable
     case SomethingWentWrong
@@ -18,7 +19,7 @@ enum LYRDataAdapterResponseStatus {
 
 protocol LYRDataAdapterProtocol {
     var description: String { get }
-    
+    func fetchLyrics(_ completion: (LYRDataAdapterResponseStatus) -> Void)
     func fetchLyrics(songTitle: String,
                      artistName: String,
                      albumTitle: String?,
@@ -28,6 +29,11 @@ protocol LYRDataAdapterProtocol {
 extension LYRDataAdapterProtocol {
     var description: String {
         return ""
+    }
+    
+    func fetchLyrics(_ completion: (LYRDataAdapterResponseStatus) -> Void) {
+        //TODO: implement below
+//        fetchLyrics(songTitle: <#T##String#>, artistName: <#T##String#>, albumTitle: <#T##String?#>, <#T##completion: (LYRDataAdapterResponseStatus) -> Void##(LYRDataAdapterResponseStatus) -> Void#>)
     }
     
     func fetchLyrics(songTitle: String,

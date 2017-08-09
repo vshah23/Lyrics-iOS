@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct Lyrics {
+struct Lyrics {
     private(set) public var albumArt: UIImage?
     public let songTitle: String
     public let artistName: String

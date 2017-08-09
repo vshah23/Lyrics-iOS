@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoAlbumArtSuccessView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzb-fn-U6L">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inz-aP-IcQ" userLabel="Container View">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nf7-EA-7jc">
+                                    <rect key="frame" x="16" y="71.5" width="343" height="187"/>
+                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Childish Gambino" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PtT-FL-NZc">
+                                    <rect key="frame" x="16" y="27.5" width="343" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telegraph Ave. (&quot;Oakland&quot; by Lloyd)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdB-jF-pnq">
+                                    <rect key="frame" x="16" y="8" width="343" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Because the Internet" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1H0-nF-1VE">
+                                    <rect key="frame" x="16" y="42" width="343" height="13.5"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="nf7-EA-7jc" secondAttribute="bottom" constant="16" id="3wH-BO-jkQ"/>
+                                <constraint firstItem="qdB-jF-pnq" firstAttribute="top" secondItem="Inz-aP-IcQ" secondAttribute="top" constant="8" id="6n4-q8-hiP"/>
+                                <constraint firstAttribute="trailing" secondItem="PtT-FL-NZc" secondAttribute="trailing" constant="16" id="8rE-xF-N47"/>
+                                <constraint firstAttribute="trailing" secondItem="1H0-nF-1VE" secondAttribute="trailing" constant="16" id="EFN-pe-gNU"/>
+                                <constraint firstItem="PtT-FL-NZc" firstAttribute="top" secondItem="qdB-jF-pnq" secondAttribute="bottom" id="Eme-fx-HYB"/>
+                                <constraint firstItem="PtT-FL-NZc" firstAttribute="leading" secondItem="Inz-aP-IcQ" secondAttribute="leading" constant="16" id="JIO-uK-2B8"/>
+                                <constraint firstItem="nf7-EA-7jc" firstAttribute="top" secondItem="1H0-nF-1VE" secondAttribute="bottom" constant="16" id="PV5-fD-eo0"/>
+                                <constraint firstItem="1H0-nF-1VE" firstAttribute="top" secondItem="PtT-FL-NZc" secondAttribute="bottom" id="RF6-UL-qrv"/>
+                                <constraint firstAttribute="trailing" secondItem="qdB-jF-pnq" secondAttribute="trailing" constant="16" id="Vcs-ub-pPP"/>
+                                <constraint firstAttribute="trailing" secondItem="nf7-EA-7jc" secondAttribute="trailing" constant="16" id="Xj9-7y-a6U"/>
+                                <constraint firstItem="1H0-nF-1VE" firstAttribute="leading" secondItem="Inz-aP-IcQ" secondAttribute="leading" constant="16" id="cNX-92-fOJ"/>
+                                <constraint firstItem="nf7-EA-7jc" firstAttribute="leading" secondItem="Inz-aP-IcQ" secondAttribute="leading" constant="16" id="lxp-IF-tRL"/>
+                                <constraint firstItem="qdB-jF-pnq" firstAttribute="leading" secondItem="Inz-aP-IcQ" secondAttribute="leading" constant="16" id="xLw-MO-h1r"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Inz-aP-IcQ" secondAttribute="trailing" id="C2x-TM-pak"/>
+                        <constraint firstAttribute="bottom" secondItem="Inz-aP-IcQ" secondAttribute="bottom" id="GtW-Kv-QTk"/>
+                        <constraint firstItem="Inz-aP-IcQ" firstAttribute="top" secondItem="mzb-fn-U6L" secondAttribute="top" id="Odc-ul-Syg"/>
+                        <constraint firstItem="Inz-aP-IcQ" firstAttribute="leading" secondItem="mzb-fn-U6L" secondAttribute="leading" id="R9F-P9-ozk"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="mzb-fn-U6L" secondAttribute="bottom" id="61v-9h-47u"/>
+                <constraint firstItem="mzb-fn-U6L" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EeQ-uA-JwK"/>
+                <constraint firstItem="mzb-fn-U6L" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="e1T-SU-Oli"/>
+                <constraint firstAttribute="trailing" secondItem="mzb-fn-U6L" secondAttribute="trailing" id="ekT-dl-JK4"/>
+                <constraint firstItem="Inz-aP-IcQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="hlm-2T-bQd"/>
+            </constraints>
+            <connections>
+                <outlet property="albumTitleLabel" destination="1H0-nF-1VE" id="87U-lR-ONj"/>
+                <outlet property="artistNameLabel" destination="PtT-FL-NZc" id="grX-yB-wKZ"/>
+                <outlet property="lyricsTextView" destination="nf7-EA-7jc" id="pZA-yv-zjD"/>
+                <outlet property="songTitleLabel" destination="qdB-jF-pnq" id="Ldb-u9-P3h"/>
+            </connections>
+            <point key="canvasLocation" x="-282" y="59"/>
+        </view>
+    </objects>
+</document>
