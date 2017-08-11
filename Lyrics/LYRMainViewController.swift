@@ -11,18 +11,13 @@ import UIKit
 class LYRMainViewController: UIViewController {
     public var dataSource: LYRLoadableDatasource?
     
-    init(dataSource: LYRLoadableDatasource) {
+    init(dataSource: LYRLoadableDatasource? = nil, dataAdapter: LYRDataAdapter? = nil) {
         super.init(nibName: nil, bundle: nil)
-        self.dataSource = dataSource
+        self.dataSource = dataSource ?? LYRLoadableDatasource(viewController: self, dataAdapter: dataAdapter)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        self.dataSource = LYRLoadableDatasource(viewController: self)
     }
 }
 

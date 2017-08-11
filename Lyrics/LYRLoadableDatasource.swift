@@ -11,7 +11,7 @@ import UIKit
 class LYRLoadableDatasource {
     weak var viewController: LYRMainViewController?
     var dataAdapter: LYRDataAdapter?
-    private var loadingContent: Bool = false
+    internal var loadingContent: Bool = false
     
     init(viewController: LYRMainViewController, dataAdapter: LYRDataAdapter?=nil) {
         self.viewController = viewController
@@ -30,7 +30,7 @@ extension LYRLoadableDatasource {
         loadingContent = true
         
         weak var weakSelf = self
-        dataAdapter.fetchData { status in
+        dataAdapter.fetchLyrics { status in
             weakSelf?.adapterStatusUpdated(status)
         }
     }
@@ -49,15 +49,25 @@ extension LYRLoadableDatasource {
     }
     
     private func contentLoading() {
-//        let view = contentView(for: .Loading)
+        guard let viewController = viewController else {
+            assertionFailure("LYRLoadableDatasource: contentLoading() - No viewcontroller set.")
+            return
+        }
         
+        let view = contentView(for: .Loading)
+        viewController.replaceView(with: view)
     }
     
     private func contentFinishedLoading(_ status: LYRDataAdapterResponseStatus) {
         loadingContent = false
         
-//        let view = contentView(for: status)œ
-//        replaceView(with: view)
+        guard let viewController = viewController else {
+            assertionFailure("LYRLoadableDatasource: contentLoading() - No viewcontroller set.")
+            return
+        }
+        
+        let view = contentView(for: status)
+        viewController.replaceView(with: view)
     }
     
     func stopLoadingContent() {
@@ -72,8 +82,12 @@ extension LYRLoadableDatasource {
         switch status {
         case .Loading:
             return loadingView()
-        case .Success(let response):
-            return successView(for: response)
+        case .Success(let lyrics):
+            if let _ = lyrics.albumArt {
+                return successView(for: lyrics)
+            } else {
+                return noAlbumArtSuccessView(for: lyrics)
+            }
         case .NetworkUnavailable:
             return noConnectionView()
         case .SomethingWentWrong:
@@ -89,7 +103,11 @@ extension LYRLoadableDatasource {
         return UIView()
     }
     
-    func successView(for data: Any?) -> UIView {
+    func successView(for lyrics: Lyrics) -> UIView {
+        return UIView()
+    }
+    
+    func noAlbumArtSuccessView(for lyrics: Lyrics) -> UIView {
         return UIView()
     }
     

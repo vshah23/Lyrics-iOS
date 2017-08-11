@@ -20,9 +20,3 @@ class LYRDataAdapter: LYRDataAdapterProtocol {
         self.apiClient = apiClient
     }
 }
-
-extension LYRDataAdapter {
-    func fetchData(_ statusUpdate: (LYRDataAdapterResponseStatus) -> Void) {
-        
-    }
-}
