@@ -11,7 +11,7 @@ import UIKit
 class LYRLoadableDatasource {
     weak var viewController: LYRMainViewController?
     var dataAdapter: LYRDataAdapter?
-    internal var loadingContent: Bool = false
+    var loadingContent: Bool = false
     
     init(viewController: LYRMainViewController, dataAdapter: LYRDataAdapter?=nil) {
         self.viewController = viewController
@@ -100,27 +100,27 @@ extension LYRLoadableDatasource {
     }
     
     func loadingView() -> UIView {
-        return UIView()
+        return LoadingView.initFromNib()
     }
     
     func successView(for lyrics: Lyrics) -> UIView {
-        return UIView()
+        return SuccessView.initWith(lyrics: lyrics)
     }
     
     func noAlbumArtSuccessView(for lyrics: Lyrics) -> UIView {
-        return UIView()
+        return NoAlbumArtSuccessView.initWith(lyrics: lyrics)
     }
     
     func noConnectionView() -> UIView {
-        return UIView()
+        return NetworkFailureView.initFromNib()
     }
     
     func genericFailureView() -> UIView {
-        return UIView()
+        return GenericErrorView.initFromNib()
     }
     
     func nothingPlayingView() -> UIView {
-        return UIView()
+        return NothingPlayingView.initFromNib()
     }
     
     func noLyricsFoundView() -> UIView {

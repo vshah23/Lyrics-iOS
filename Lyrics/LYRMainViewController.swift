@@ -18,6 +18,7 @@ class LYRMainViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.dataSource = LYRLoadableDatasource(viewController: self, dataAdapter: LYRGoogleMusicDataAdapter())
     }
 }
 
@@ -40,6 +41,8 @@ extension LYRMainViewController {
         superview.subviews.forEach { subview in
             subview.removeFromSuperview()
         }
+        
+        // TODO: fade in the view
         superview.addSubview(newView)
         newView.pinToSuperView()
     }

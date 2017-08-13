@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 enum LYRDataAdapterResponseStatus {
     case Loading
@@ -18,29 +19,39 @@ enum LYRDataAdapterResponseStatus {
 }
 
 protocol LYRDataAdapterProtocol {
-    var description: String { get }
     func fetchLyrics(_ completion: (LYRDataAdapterResponseStatus) -> Void)
 }
 
 extension LYRDataAdapterProtocol {
-    var description: String {
-        return ""
-    }
-    
     func fetchLyrics(_ completion: (LYRDataAdapterResponseStatus) -> Void) {
-        //TODO: get the below data from the currently playing song
-        fetchLyrics(albumArt: nil,
-                    songTitle: "",
-                    artistName: "",
-                    albumTitle: "",
+        let player = MPMusicPlayerController.systemMusicPlayer()
+        guard let mediaItem = player.nowPlayingItem,
+            let songTitle = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as? String,
+            let artistName = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String else {
+                completion(.NothingPlaying)
+                return
+        }
+        let albumTitle = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String
+        let albumArtwork = mediaItem.value(forProperty: MPMediaItemPropertyArtwork) as? MPMediaItemArtwork
+        let albumArt = albumArtwork?.image(at: CGSize(width: 500, height: 500))
+        
+        print("\(songTitle) by \(artistName) on \(albumTitle ?? "N/A")")
+        
+        let nowPlayingCenter = MPNowPlayingInfoCenter.default()
+        print(nowPlayingCenter.nowPlayingInfo ?? "nothing playing")
+        
+        fetchLyrics(albumArt: albumArt,
+                    songTitle: songTitle,
+                    artistName: artistName,
+                    albumTitle: albumTitle,
                     completion)
     }
     
-    private func fetchLyrics(albumArt: UIImage?,
-                             songTitle: String,
-                             artistName: String,
-                             albumTitle: String?,
-                             _ completion: (LYRDataAdapterResponseStatus) -> Void) {
+    func fetchLyrics(albumArt: UIImage?,
+                     songTitle: String,
+                     artistName: String,
+                     albumTitle: String?,
+                     _ completion: (LYRDataAdapterResponseStatus) -> Void) {
         completion(.SomethingWentWrong)
     }
 }

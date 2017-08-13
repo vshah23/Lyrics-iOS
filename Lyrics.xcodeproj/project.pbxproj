@@ -13,6 +13,9 @@
 		1D19417D1EF4DE7700B4F1B6 /* LYRDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19417C1EF4DE7700B4F1B6 /* LYRDataAdapter.swift */; };
 		1D246A7A1EF614C0007F4865 /* LYRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D246A791EF614C0007F4865 /* LYRMainViewController.swift */; };
 		1D30D89D1EE3998800C221A3 /* Lyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30D89C1EE3998800C221A3 /* Lyrics.swift */; };
+		1D343E691F3FF19000F6114E /* NoAlbumArtSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF36BB11F3A9FD5006AA4D6 /* NoAlbumArtSuccessView.swift */; };
+		1D343E6D1F40111900F6114E /* NothingPlayingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D343E6C1F40111900F6114E /* NothingPlayingView.xib */; };
+		1D343E6F1F40112500F6114E /* NothingPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D343E6E1F40112500F6114E /* NothingPlayingView.swift */; };
 		1D56EFDA1EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D56EFD91EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift */; };
 		1D730DC21EE126C900AA232A /* LYRAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D730DC11EE126C900AA232A /* LYRAppDelegate.swift */; };
 		1D730DC71EE126C900AA232A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D730DC51EE126C900AA232A /* Main.storyboard */; };
@@ -58,6 +61,8 @@
 		1D19417C1EF4DE7700B4F1B6 /* LYRDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRDataAdapter.swift; sourceTree = "<group>"; };
 		1D246A791EF614C0007F4865 /* LYRMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRMainViewController.swift; sourceTree = "<group>"; };
 		1D30D89C1EE3998800C221A3 /* Lyrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lyrics.swift; sourceTree = "<group>"; };
+		1D343E6C1F40111900F6114E /* NothingPlayingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingPlayingView.xib; sourceTree = "<group>"; };
+		1D343E6E1F40112500F6114E /* NothingPlayingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NothingPlayingView.swift; sourceTree = "<group>"; };
 		1D56EFD91EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRGoogleMusicDataAdapter.swift; sourceTree = "<group>"; };
 		1D730DBE1EE126C900AA232A /* Lyrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D730DC11EE126C900AA232A /* LYRAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYRAppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +152,22 @@
 			path = "8 Helper Extensions";
 			sourceTree = "<group>";
 		};
+		1D343E6A1F4010C500F6114E /* 5 Nothing Playing */ = {
+			isa = PBXGroup;
+			children = (
+				1D343E6C1F40111900F6114E /* NothingPlayingView.xib */,
+				1D343E6E1F40112500F6114E /* NothingPlayingView.swift */,
+			);
+			name = "5 Nothing Playing";
+			sourceTree = "<group>";
+		};
+		1D343E6B1F4010D300F6114E /* 6 No Lyrics Found */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "6 No Lyrics Found";
+			sourceTree = "<group>";
+		};
 		1D730DB51EE126C900AA232A = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +241,8 @@
 				1DEA52BC1F36CB2800500D18 /* 2 Success */,
 				1DEA52BD1F36CB2E00500D18 /* 3 Network Failure */,
 				1DEA52BE1F36CB4100500D18 /* 4 Something Went Wrong */,
+				1D343E6A1F4010C500F6114E /* 5 Nothing Playing */,
+				1D343E6B1F4010D300F6114E /* 6 No Lyrics Found */,
 			);
 			name = "2 View";
 			sourceTree = "<group>";
@@ -462,6 +485,7 @@
 				1DC97F9E1F3809B100EAEFC9 /* NetworkFailureView.xib in Resources */,
 				1DEA52BA1F36CB1C00500D18 /* LoadingView.xib in Resources */,
 				1D730DC91EE126C900AA232A /* Assets.xcassets in Resources */,
+				1D343E6D1F40111900F6114E /* NothingPlayingView.xib in Resources */,
 				1D730DC71EE126C900AA232A /* Main.storyboard in Resources */,
 				1DC97FA21F3809D100EAEFC9 /* GenericErrorView.xib in Resources */,
 			);
@@ -657,6 +681,8 @@
 				1D05F40E1F303E34002AD6A9 /* LYRLoadableDatasource.swift in Sources */,
 				1DC97F981F3803E900EAEFC9 /* LoadingView.swift in Sources */,
 				1D19417D1EF4DE7700B4F1B6 /* LYRDataAdapter.swift in Sources */,
+				1D343E6F1F40112500F6114E /* NothingPlayingView.swift in Sources */,
+				1D343E691F3FF19000F6114E /* NoAlbumArtSuccessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

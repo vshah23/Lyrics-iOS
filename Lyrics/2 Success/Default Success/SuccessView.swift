@@ -15,13 +15,14 @@ class SuccessView: UIView {
     @IBOutlet weak var albumTitleLabel: UILabel!
     @IBOutlet weak var lyricsTextView: UITextView!
     
-    static func initWith(lyrics: Lyrics) {
+    static func initWith(lyrics: Lyrics) -> SuccessView {
         let view = initFromNib()
         view.setColorsBasedOn(image: lyrics.albumArt)
         view.songTitleLabel.text = lyrics.songTitle
         view.artistNameLabel.text = lyrics.artistName
         view.albumTitleLabel.text = lyrics.albumTitle
         view.lyricsTextView.text = lyrics.lyrics
+        return view
     }
     
     required init?(coder aDecoder: NSCoder) {

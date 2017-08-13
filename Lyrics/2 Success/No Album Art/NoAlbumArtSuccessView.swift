@@ -14,14 +14,14 @@ class NoAlbumArtSuccessView: UIView {
     @IBOutlet weak var albumTitleLabel: UILabel!
     @IBOutlet weak var lyricsTextView: UITextView!
     
-    static func initWith(lyrics: Lyrics) {
+    static func initWith(lyrics: Lyrics) -> NoAlbumArtSuccessView {
         let view = initFromNib()
-        view.setColorsBasedOn(image: albumArt)
-        
+        view.setColors()
         view.songTitleLabel.text = lyrics.songTitle
         view.artistNameLabel.text = lyrics.artistName
         view.albumTitleLabel.text = lyrics.albumTitle
         view.lyricsTextView.text = lyrics.lyrics
+        return view
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,17 +29,8 @@ class NoAlbumArtSuccessView: UIView {
     }
 }
 
-extension SuccessView {
-    func setColorsBasedOn(image: UIImage?) {
-        guard let image = image else {
-            setColorsWithoutImage()
-            return
-        }
-        
-        //TODO
-    }
-    
-    func setColorsWithoutImage() {
+extension NoAlbumArtSuccessView {
+    func setColors() {
         //TODO
     }
 }

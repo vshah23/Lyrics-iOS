@@ -15,9 +15,9 @@ internal extension UIView {
             return
         }
         
-        self.topAnchor.constraint(equalTo: superview.topAnchor)
-        self.leftAnchor.constraint(equalTo: superview.leftAnchor)
-        self.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
-        self.rightAnchor.constraint(equalTo: superview.rightAnchor)
+        self.topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
+        self.leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
+        self.bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
+        self.rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
     }
 }
