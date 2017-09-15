@@ -19,39 +19,47 @@ enum LYRDataAdapterResponseStatus {
 }
 
 protocol LYRDataAdapterProtocol {
-    func fetchLyrics(_ completion: (LYRDataAdapterResponseStatus) -> Void)
+    func fetchLyrics(_ completion: @escaping (LYRDataAdapterResponseStatus) -> Void)
 }
 
 extension LYRDataAdapterProtocol {
-    func fetchLyrics(_ completion: (LYRDataAdapterResponseStatus) -> Void) {
-        let player = MPMusicPlayerController.systemMusicPlayer()
-        guard let mediaItem = player.nowPlayingItem,
-            let songTitle = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as? String,
-            let artistName = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String else {
-                completion(.NothingPlaying)
-                return
-        }
-        let albumTitle = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String
-        let albumArtwork = mediaItem.value(forProperty: MPMediaItemPropertyArtwork) as? MPMediaItemArtwork
-        let albumArt = albumArtwork?.image(at: CGSize(width: 500, height: 500))
+    func fetchLyrics(_ completion: @escaping (LYRDataAdapterResponseStatus) -> Void) {
+//        MPMediaLibrary.getNowPlayingInfo() {
+//            OperationQueue.main.addOperation({ 
+//                let player = MPMusicPlayerController.systemMusicPlayer()
+//                print("playback state: \(player.playbackState.rawValue)")
+//                guard let mediaItem = player.nowPlayingItem,
+//                    let songTitle = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as? String,
+//                    let artistName = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String else {
+//                        completion(.NothingPlaying)
+//                        return
+//                }
+//                let albumTitle = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String
+//                let albumArtwork = mediaItem.value(forProperty: MPMediaItemPropertyArtwork) as? MPMediaItemArtwork
+//                let albumArt = albumArtwork?.image(at: CGSize(width: 500, height: 500))
+//                
+//                print("\(songTitle) by \(artistName) on \(albumTitle ?? "N/A")")
+//                
+//                self.fetchLyrics(albumArt: albumArt,
+//                            songTitle: songTitle,
+//                            artistName: artistName,
+//                            albumTitle: albumTitle,
+//                            completion)
+//            })
+//        }
         
-        print("\(songTitle) by \(artistName) on \(albumTitle ?? "N/A")")
+//        guard let localClient = MRMediaRemoteOriginClientManager.localClient as? MRMediaRemoteOriginClient else {
+//            return
+//        }
         
-        let nowPlayingCenter = MPNowPlayingInfoCenter.default()
-        print(nowPlayingCenter.nowPlayingInfo ?? "nothing playing")
         
-        fetchLyrics(albumArt: albumArt,
-                    songTitle: songTitle,
-                    artistName: artistName,
-                    albumTitle: albumTitle,
-                    completion)
     }
     
     func fetchLyrics(albumArt: UIImage?,
                      songTitle: String,
                      artistName: String,
                      albumTitle: String?,
-                     _ completion: (LYRDataAdapterResponseStatus) -> Void) {
+                     _ completion: @escaping (LYRDataAdapterResponseStatus) -> Void) {
         completion(.SomethingWentWrong)
     }
 }

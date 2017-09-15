@@ -16,6 +16,15 @@ class LYRAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if let b = Bundle(path: "/System/Library/PrivateFrameworks/MediaRemote.framework"),
+            b.load() {
+//            let FTDeviceSupport = NSClassFromString("FTDeviceSupport")
+            
+            
+        } else {
+            NSLog("couldn't load bundle")
+        }
+        
         return true
     }
 

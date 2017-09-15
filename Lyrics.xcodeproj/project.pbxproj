@@ -23,6 +23,7 @@
 		1D730DCC1EE126C900AA232A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D730DCA1EE126C900AA232A /* LaunchScreen.storyboard */; };
 		1D730DD71EE126C900AA232A /* LyricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D730DD61EE126C900AA232A /* LyricsTests.swift */; };
 		1D730DE21EE126C900AA232A /* LyricsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D730DE11EE126C900AA232A /* LyricsUITests.swift */; };
+		1DC69A721F6B8D980080D204 /* LYRMediaRemoteAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC69A711F6B8D980080D204 /* LYRMediaRemoteAdapter.m */; };
 		1DC97F981F3803E900EAEFC9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC97F971F3803E900EAEFC9 /* LoadingView.swift */; };
 		1DC97F9A1F3804E900EAEFC9 /* SuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DC97F991F3804E900EAEFC9 /* SuccessView.xib */; };
 		1DC97F9C1F3804F300EAEFC9 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC97F9B1F3804F300EAEFC9 /* SuccessView.swift */; };
@@ -76,6 +77,10 @@
 		1D730DDD1EE126C900AA232A /* LyricsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyricsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D730DE11EE126C900AA232A /* LyricsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsUITests.swift; sourceTree = "<group>"; };
 		1D730DE31EE126C900AA232A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DC69A6C1F6A4A1A0080D204 /* MediaRemote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemote.h; sourceTree = "<group>"; };
+		1DC69A6F1F6B8D970080D204 /* Lyrics-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Lyrics-Bridging-Header.h"; path = "8 Helper Extensions/Lyrics-Bridging-Header.h"; sourceTree = "<group>"; };
+		1DC69A701F6B8D980080D204 /* LYRMediaRemoteAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LYRMediaRemoteAdapter.h; path = "Obj-C/LYRMediaRemoteAdapter.h"; sourceTree = "<group>"; };
+		1DC69A711F6B8D980080D204 /* LYRMediaRemoteAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LYRMediaRemoteAdapter.m; path = "Obj-C/LYRMediaRemoteAdapter.m"; sourceTree = "<group>"; };
 		1DC97F971F3803E900EAEFC9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1DC97F991F3804E900EAEFC9 /* SuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessView.xib; sourceTree = "<group>"; };
 		1DC97F9B1F3804F300EAEFC9 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
@@ -143,12 +148,14 @@
 			name = "6 Storyboards";
 			sourceTree = "<group>";
 		};
-		1D05F4061F302A6F002AD6A9 /* 8 Helper Extensions */ = {
+		1D05F4061F302A6F002AD6A9 /* 8 Helpers+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1DC69A6E1F6B8D7A0080D204 /* Objc */,
 				1D05F4071F302A7D002AD6A9 /* UIView+Constraints.swift */,
 				1DEA52BF1F36CBEA00500D18 /* UIView+NibLoadable.swift */,
 			);
+			name = "8 Helpers+Extensions";
 			path = "8 Helper Extensions";
 			sourceTree = "<group>";
 		};
@@ -202,7 +209,7 @@
 				1DEEDFD81EF4C7DC00355D3F /* 5 Data Adapters */,
 				1D05F4001F30186C002AD6A9 /* 6 Storyboards */,
 				1D730DF21EE127A200AA232A /* 7 Supporting Files */,
-				1D05F4061F302A6F002AD6A9 /* 8 Helper Extensions */,
+				1D05F4061F302A6F002AD6A9 /* 8 Helpers+Extensions */,
 				1DF36BB21F3AA160006AA4D6 /* 9 Protocols */,
 			);
 			path = Lyrics;
@@ -258,9 +265,27 @@
 		1D730DF21EE127A200AA232A /* 7 Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DC69A6F1F6B8D970080D204 /* Lyrics-Bridging-Header.h */,
 				1D730DCD1EE126C900AA232A /* Info.plist */,
 			);
 			name = "7 Supporting Files";
+			sourceTree = "<group>";
+		};
+		1DC69A6B1F6A4A0B0080D204 /* MediaRemote */ = {
+			isa = PBXGroup;
+			children = (
+				1DC69A6C1F6A4A1A0080D204 /* MediaRemote.h */,
+			);
+			name = MediaRemote;
+			sourceTree = "<group>";
+		};
+		1DC69A6E1F6B8D7A0080D204 /* Objc */ = {
+			isa = PBXGroup;
+			children = (
+				1DC69A701F6B8D980080D204 /* LYRMediaRemoteAdapter.h */,
+				1DC69A711F6B8D980080D204 /* LYRMediaRemoteAdapter.m */,
+			);
+			name = Objc;
 			sourceTree = "<group>";
 		};
 		1DEA52BB1F36CB2100500D18 /* 1 Loading */ = {
@@ -350,6 +375,7 @@
 		DAB493FD9094939854C4F337 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DC69A6B1F6A4A0B0080D204 /* MediaRemote */,
 				6A416BAC74F8F4B556767B77 /* Pods_Lyrics.framework */,
 				9D5F7EFFB3814CE8A8A38E8C /* Pods_LyricsTests.framework */,
 				7ACC08645AA782E68F5F10C8 /* Pods_LyricsUITests.framework */,
@@ -436,7 +462,7 @@
 					1D730DBD1EE126C900AA232A = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 67DFAM4Q32;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					1D730DD11EE126C900AA232A = {
@@ -674,6 +700,7 @@
 				1D56EFDA1EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift in Sources */,
 				1D05F4081F302A7D002AD6A9 /* UIView+Constraints.swift in Sources */,
 				1DC97F9C1F3804F300EAEFC9 /* SuccessView.swift in Sources */,
+				1DC69A721F6B8D980080D204 /* LYRMediaRemoteAdapter.m in Sources */,
 				1DC97FA01F3809BC00EAEFC9 /* NetworkFailureView.swift in Sources */,
 				1D246A7A1EF614C0007F4865 /* LYRMainViewController.swift in Sources */,
 				1D1941781EF4D6E000B4F1B6 /* LYRDataAdapterProtocol.swift in Sources */,
@@ -857,14 +884,21 @@
 			baseConfigurationReference = A555DD3B878551AAB5C1E70A /* Pods-Lyrics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 67DFAM4Q32;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks,
+				);
 				INFOPLIST_FILE = Lyrics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vikas.Lyrics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lyrics/7 Supporting Files/Lyrics-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -873,13 +907,19 @@
 			baseConfigurationReference = 5A14FC90A00752D5EE414715 /* Pods-Lyrics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 67DFAM4Q32;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks,
+				);
 				INFOPLIST_FILE = Lyrics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vikas.Lyrics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lyrics/7 Supporting Files/Lyrics-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
