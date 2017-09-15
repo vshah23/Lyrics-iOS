@@ -78,9 +78,9 @@
 		1D730DE11EE126C900AA232A /* LyricsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsUITests.swift; sourceTree = "<group>"; };
 		1D730DE31EE126C900AA232A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DC69A6C1F6A4A1A0080D204 /* MediaRemote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemote.h; sourceTree = "<group>"; };
-		1DC69A6F1F6B8D970080D204 /* Lyrics-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Lyrics-Bridging-Header.h"; path = "8 Helper Extensions/Lyrics-Bridging-Header.h"; sourceTree = "<group>"; };
-		1DC69A701F6B8D980080D204 /* LYRMediaRemoteAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LYRMediaRemoteAdapter.h; path = "Obj-C/LYRMediaRemoteAdapter.h"; sourceTree = "<group>"; };
-		1DC69A711F6B8D980080D204 /* LYRMediaRemoteAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LYRMediaRemoteAdapter.m; path = "Obj-C/LYRMediaRemoteAdapter.m"; sourceTree = "<group>"; };
+		1DC69A6F1F6B8D970080D204 /* Lyrics-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Lyrics-Bridging-Header.h"; path = "Lyrics-Bridging-Header.h"; sourceTree = "<group>"; };
+		1DC69A701F6B8D980080D204 /* LYRMediaRemoteAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LYRMediaRemoteAdapter.h; path = LYRMediaRemoteAdapter.h; sourceTree = "<group>"; };
+		1DC69A711F6B8D980080D204 /* LYRMediaRemoteAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LYRMediaRemoteAdapter.m; path = LYRMediaRemoteAdapter.m; sourceTree = "<group>"; };
 		1DC97F971F3803E900EAEFC9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1DC97F991F3804E900EAEFC9 /* SuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessView.xib; sourceTree = "<group>"; };
 		1DC97F9B1F3804F300EAEFC9 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
@@ -137,6 +137,7 @@
 				1D05F4031F3026F6002AD6A9 /* LYRLoadableDatasource.swift */,
 			);
 			name = "4 Datasources";
+			path = "4 Datasources";
 			sourceTree = "<group>";
 		};
 		1D05F4001F30186C002AD6A9 /* 6 Storyboards */ = {
@@ -146,6 +147,7 @@
 				1D730DC51EE126C900AA232A /* Main.storyboard */,
 			);
 			name = "6 Storyboards";
+			path = "6 Storyboards";
 			sourceTree = "<group>";
 		};
 		1D05F4061F302A6F002AD6A9 /* 8 Helpers+Extensions */ = {
@@ -156,16 +158,17 @@
 				1DEA52BF1F36CBEA00500D18 /* UIView+NibLoadable.swift */,
 			);
 			name = "8 Helpers+Extensions";
-			path = "8 Helper Extensions";
+			path = "8 Helpers+Extensions";
 			sourceTree = "<group>";
 		};
 		1D343E6A1F4010C500F6114E /* 5 Nothing Playing */ = {
 			isa = PBXGroup;
 			children = (
-				1D343E6C1F40111900F6114E /* NothingPlayingView.xib */,
 				1D343E6E1F40112500F6114E /* NothingPlayingView.swift */,
+				1D343E6C1F40111900F6114E /* NothingPlayingView.xib */,
 			);
 			name = "5 Nothing Playing";
+			path = "5 Nothing Playing";
 			sourceTree = "<group>";
 		};
 		1D343E6B1F4010D300F6114E /* 6 No Lyrics Found */ = {
@@ -173,17 +176,18 @@
 			children = (
 			);
 			name = "6 No Lyrics Found";
+			path = "6 No Lyrics Found";
 			sourceTree = "<group>";
 		};
 		1D730DB51EE126C900AA232A = {
 			isa = PBXGroup;
 			children = (
+				DAB493FD9094939854C4F337 /* Frameworks */,
 				1D730DC01EE126C900AA232A /* Lyrics */,
 				1D730DD51EE126C900AA232A /* LyricsTests */,
 				1D730DE01EE126C900AA232A /* LyricsUITests */,
-				1D730DBF1EE126C900AA232A /* Products */,
 				B99F85658F1380AA4B6E969F /* Pods */,
-				DAB493FD9094939854C4F337 /* Frameworks */,
+				1D730DBF1EE126C900AA232A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,8 +204,6 @@
 		1D730DC01EE126C900AA232A /* Lyrics */ = {
 			isa = PBXGroup;
 			children = (
-				1D730DC11EE126C900AA232A /* LYRAppDelegate.swift */,
-				1D730DC81EE126C900AA232A /* Assets.xcassets */,
 				1D730DEF1EE1278100AA232A /* 1 Model */,
 				1D730DF01EE1278B00AA232A /* 2 View */,
 				1D730DF11EE1279100AA232A /* 3 ViewController */,
@@ -211,6 +213,8 @@
 				1D730DF21EE127A200AA232A /* 7 Supporting Files */,
 				1D05F4061F302A6F002AD6A9 /* 8 Helpers+Extensions */,
 				1DF36BB21F3AA160006AA4D6 /* 9 Protocols */,
+				1D730DC81EE126C900AA232A /* Assets.xcassets */,
+				1D730DC11EE126C900AA232A /* LYRAppDelegate.swift */,
 			);
 			path = Lyrics;
 			sourceTree = "<group>";
@@ -218,8 +222,8 @@
 		1D730DD51EE126C900AA232A /* LyricsTests */ = {
 			isa = PBXGroup;
 			children = (
-				1D730DD61EE126C900AA232A /* LyricsTests.swift */,
 				1D730DD81EE126C900AA232A /* Info.plist */,
+				1D730DD61EE126C900AA232A /* LyricsTests.swift */,
 			);
 			path = LyricsTests;
 			sourceTree = "<group>";
@@ -227,8 +231,8 @@
 		1D730DE01EE126C900AA232A /* LyricsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				1D730DE11EE126C900AA232A /* LyricsUITests.swift */,
 				1D730DE31EE126C900AA232A /* Info.plist */,
+				1D730DE11EE126C900AA232A /* LyricsUITests.swift */,
 			);
 			path = LyricsUITests;
 			sourceTree = "<group>";
@@ -239,6 +243,7 @@
 				1D30D89C1EE3998800C221A3 /* Lyrics.swift */,
 			);
 			name = "1 Model";
+			path = "1 Model";
 			sourceTree = "<group>";
 		};
 		1D730DF01EE1278B00AA232A /* 2 View */ = {
@@ -252,6 +257,7 @@
 				1D343E6B1F4010D300F6114E /* 6 No Lyrics Found */,
 			);
 			name = "2 View";
+			path = "2 View";
 			sourceTree = "<group>";
 		};
 		1D730DF11EE1279100AA232A /* 3 ViewController */ = {
@@ -260,15 +266,17 @@
 				1D246A791EF614C0007F4865 /* LYRMainViewController.swift */,
 			);
 			name = "3 ViewController";
+			path = "3 ViewController";
 			sourceTree = "<group>";
 		};
 		1D730DF21EE127A200AA232A /* 7 Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1DC69A6F1F6B8D970080D204 /* Lyrics-Bridging-Header.h */,
 				1D730DCD1EE126C900AA232A /* Info.plist */,
+				1DC69A6F1F6B8D970080D204 /* Lyrics-Bridging-Header.h */,
 			);
 			name = "7 Supporting Files";
+			path = "7 Supporting Files";
 			sourceTree = "<group>";
 		};
 		1DC69A6B1F6A4A0B0080D204 /* MediaRemote */ = {
@@ -286,13 +294,14 @@
 				1DC69A711F6B8D980080D204 /* LYRMediaRemoteAdapter.m */,
 			);
 			name = Objc;
+			path = Objc;
 			sourceTree = "<group>";
 		};
 		1DEA52BB1F36CB2100500D18 /* 1 Loading */ = {
 			isa = PBXGroup;
 			children = (
-				1DEA52B91F36CB1C00500D18 /* LoadingView.xib */,
 				1DC97F971F3803E900EAEFC9 /* LoadingView.swift */,
+				1DEA52B91F36CB1C00500D18 /* LoadingView.xib */,
 			);
 			path = "1 Loading";
 			sourceTree = "<group>";
@@ -309,8 +318,8 @@
 		1DEA52BD1F36CB2E00500D18 /* 3 Network Failure */ = {
 			isa = PBXGroup;
 			children = (
-				1DC97F9D1F3809B100EAEFC9 /* NetworkFailureView.xib */,
 				1DC97F9F1F3809BC00EAEFC9 /* NetworkFailureView.swift */,
+				1DC97F9D1F3809B100EAEFC9 /* NetworkFailureView.xib */,
 			);
 			path = "3 Network Failure";
 			sourceTree = "<group>";
@@ -318,8 +327,8 @@
 		1DEA52BE1F36CB4100500D18 /* 4 Something Went Wrong */ = {
 			isa = PBXGroup;
 			children = (
-				1DC97FA11F3809D100EAEFC9 /* GenericErrorView.xib */,
 				1DC97FA31F3809D800EAEFC9 /* GenericErrorView.swift */,
+				1DC97FA11F3809D100EAEFC9 /* GenericErrorView.xib */,
 			);
 			path = "4 Something Went Wrong";
 			sourceTree = "<group>";
@@ -332,13 +341,14 @@
 				1D56EFD91EF503A8005A52B6 /* LYRGoogleMusicDataAdapter.swift */,
 			);
 			name = "5 Data Adapters";
+			path = "5 Data Adapters";
 			sourceTree = "<group>";
 		};
 		1DF36BAE1F3A9FB2006AA4D6 /* Default Success */ = {
 			isa = PBXGroup;
 			children = (
-				1DC97F991F3804E900EAEFC9 /* SuccessView.xib */,
 				1DC97F9B1F3804F300EAEFC9 /* SuccessView.swift */,
+				1DC97F991F3804E900EAEFC9 /* SuccessView.xib */,
 			);
 			path = "Default Success";
 			sourceTree = "<group>";
@@ -346,8 +356,8 @@
 		1DF36BAF1F3A9FC3006AA4D6 /* No Album Art */ = {
 			isa = PBXGroup;
 			children = (
-				1DF36BB01F3A9FD5006AA4D6 /* NoAlbumArtSuccessView.xib */,
 				1DF36BB11F3A9FD5006AA4D6 /* NoAlbumArtSuccessView.swift */,
+				1DF36BB01F3A9FD5006AA4D6 /* NoAlbumArtSuccessView.xib */,
 			);
 			path = "No Album Art";
 			sourceTree = "<group>";
@@ -751,6 +761,7 @@
 				1D730DC61EE126C900AA232A /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		1D730DCA1EE126C900AA232A /* LaunchScreen.storyboard */ = {
@@ -759,6 +770,7 @@
 				1D730DCB1EE126C900AA232A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -890,7 +902,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks,
 				);
-				INFOPLIST_FILE = Lyrics/Info.plist;
+				INFOPLIST_FILE = "Lyrics/7 Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
@@ -913,7 +925,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks,
 				);
-				INFOPLIST_FILE = Lyrics/Info.plist;
+				INFOPLIST_FILE = "Lyrics/7 Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vikas.Lyrics;
